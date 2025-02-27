@@ -148,6 +148,16 @@ ul#countdown {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+  
+    width:auto;  /*new*/
+}
+
+.card-text{
+  max-width:90%;  /*限制最大寬度，避免太長*/
+  word-wrap:break-word;  /*自動換行*/
+  white-space:normal;  /*允許多行顯示*/
+  text-align:center;  
+  font-size:18px;
 }
 
 .square-card {
@@ -164,8 +174,19 @@ ul#countdown {
     border-radius: 5px;
 }
 
+
+
 @media (max-width: 768px) {
     .browser {
         max-width: 100%;
     }
+  
+  .card-text{
+    font-size:16px;
+    max-width:100%;
+  }
+  
+  .card{
+    max-width:95%;
+  }
 }
