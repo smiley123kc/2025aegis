@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資安大家來找碴</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <h1>資安大家來找碴</h1>
+
+    <div class="timer-container">
+        <div id="progressBar"><div></div></div>
+        <ul id="countdown">
+            <li><span id="minute" class="numbers">10</span><p class="name">minutes</p></li>
+            <li><span id="second" class="numbers">00</span><p class="name">seconds</p></li>
+        </ul>
+    </div>
+
+    <div class="game-container">
+        <div class="browser">
+            <div class="browser-top">
+                <div class="browser-buttons">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <div class="tab">🔍 釣魚網站測試</div>
+            </div>
+
+            <div class="address-bar" onclick="checkAnswer()">
+                <span class="not-secure">⚠️ 不安全</span>
+                <span class="fake-url" id="fake-url">http://amaz0n.com</span>
+            </div>
+
+            <div class="fake-website" id="fake-content">
+                <h2>歡迎來到「Amazon」</h2>
+                <p>我們有超值優惠等你拿！🔥</p>
+                <button>立即購買</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 彈出警告 -->
+    <div class="popup" id="popup">
+        <p id="popup-text"></p>
+        <button onclick="showCard()">查看提示</button>
+    </div>
+
+    <!-- 翻頁提示字卡 -->
+    <div class="card" id="card">
+        <p id="card-text"></p>
+        <div class="square-card" id="square-card"></div>
+        <button onclick="nextLevel()">下一關</button>
+    </div>
+
+    <script src="script2.js"></script>
+
+</body>
+</html>
