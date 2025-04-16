@@ -576,7 +576,7 @@ h2 {
   height: 0px;
 	will-change: transform;
 	transform: translateY(1000px);
-	animation: fireworkstart 3s ease-out infinite;
+	animation: fireworkstart 1s ease-out infinite;
 	
 }
 .fireworks .firework .explosion {
