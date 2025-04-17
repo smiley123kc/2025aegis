@@ -446,10 +446,10 @@ ul#countdown {
     background: #FF8C00;
     border: none;
     padding: 12px 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     margin: 10px 0;
     cursor: pointer;
-    width: 200px;
+    width: 240px;
     font-size: 16px;
 }
 
@@ -457,10 +457,10 @@ ul#countdown {
     background: #FFD814;
     border: none;
     padding: 12px 20px;
-    border-radius: 20px;
-    margin: 10px 0;
+    border-radius: 30px;
+    margin: 20px 0 10px 0;
     cursor: pointer;
-    width: 200px;
+    width: 240px;
     font-size: 16px;
 }
     
@@ -539,7 +539,7 @@ ul#countdown {
 
 
 h2 {
-    overflow: hidden;
+	  overflow: hidden;
     text-align: center;
     color: black;
     /*
@@ -549,7 +549,7 @@ h2 {
     margin-top:30px;
     font-family: sans-serif;
     font-size: clamp(24px, 5vw, 40px); /*clamp(最小, 字體大小為視窗寬度的5%, 最大)可用來確保字體不會太大或太小； */
-    letter-spacing: 0px;
+	  letter-spacing: 0px;
     font-weight: bold;
 }
 
