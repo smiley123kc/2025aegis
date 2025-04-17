@@ -92,7 +92,7 @@ const productData = {
       { rating: 5, comment: "後悔晚買了 :( ", author: "Henry" },
       { rating: 3, comment: "可以多人連線，聚會玩很開心。", author: "Anita" }
     ],
-    imageUrl: "https://m.media-amazon.com/images/I/71ivrWiYkLL._AC_SL1500_.jpg"
+    imageUrl: "https://i0.wp.com/uploads.saigacdn.com/2021/07/nintendo-switch-oled-model-00.jpg"
   }, 
   
   "Kindle Paperwhite (16GB)": {
