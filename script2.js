@@ -50,7 +50,7 @@ document.querySelector("#popup-2 #popup-text").innerText = levels[currentLevel].
 // 產品資料，依據產品標題設定對應的詳細資訊
 const productData = {
   "Sony WH-1000XM5 Wireless Headphones": {
-    description: "WH-1000XM5耳機不僅配備兩組可控制八個麥克風的處理器、可自動依偑戴狀況和環境將降噪功能最佳化的自動降噪優化器，以及特別設計的驅動單體，更搭載最佳的降噪 1 技術，將不受干擾的聆聽體驗和通話清晰度提升至全新境界。",
+    description: "可自動依偑戴狀況和環境自動降噪，將不受干擾的聆聽體驗和通話清晰度提升至全新境界。",
     reviews: [
       { rating: 5, comment: "Sony藍芽耳機外觀超美，音色也完美!!", author: "Wendy" },
       { rating: 4, comment: "質感很好，但很昂貴。", author: "Patty" },
@@ -60,7 +60,7 @@ const productData = {
   }, 
   
   "Apple Watch Series 10": {
-    description: "Apple Watch Series 10 是首款提供廣視角OLED 顯示器的Apple 產品，因此，從特定角度觀看時，顯示器的亮度比Series 9 高出40%，使閱讀變得更輕易、快速。",
+    description: "首款提供廣視角OLED 顯示器的Apple 產品，從特定角度觀看時，顯示器的亮度高出40%，使閱讀變得更輕易、快速。",
     reviews: [
       { rating: 5, comment: "Apple手錶質感就是好!!", author: "Andy" },
       { rating: 4, comment: "價格過於昂貴。", author: "Alex" }
@@ -69,7 +69,7 @@ const productData = {
   }, 
   
   "Samsung QLED 4K Q60C TV": {
-    description: "擁有金屬量子點顯色技術的QLED 4K Q60C 可以呈現完整的色彩. QLED Q60C 搭載Quantum HDR 技術，可以展現影像中的細節。",
+    description: "擁有金屬量子點顯色技術的QLED 4K Q60C可以呈現完整的色彩，搭載Quantum HDR技術，可以展現影像中的細節。",
     reviews: [
       { rating: 5, comment: "三星電視外型很完美!", author: "Cindy" },
       { rating: 3, comment: "寄送速度太慢!", author: "Ruby" }
@@ -78,7 +78,7 @@ const productData = {
   }, 
   
   "Apple iPad Pro 11-inch": {
-    description: "11 吋Ultra Retina XDR 顯示器。 Ultra Retina XDR 帶來極致的明亮和對比、出色的色彩精準度，並具備ProMotion 自動適應更新頻率、P3 廣色域與原彩顯示等先進技術3。 1TB 與2TB 機型還可選配Nano-texture 顯示器玻璃。 效能表現與儲存空間。",
+    description: "具備ProMotion 自動適應更新頻率、P3 廣色域與原彩顯示等先進技術。",
     reviews: [
       { rating: 5, comment: "Ipad很方便攜帶!", author: "Omo" },
     ],
@@ -86,7 +86,7 @@ const productData = {
   }, 
   
    "Nintendo Switch OLED Model": {
-    description: "Nintendo Switch是家庭用遊戲機，不單止可連接電視來玩，也可配合遊戲方式，自由選擇3中模式。",
+    description: "家庭用遊戲機，不單止可連接電視來玩，也可配合遊戲方式，自由選擇3中模式。",
     reviews: [
       { rating: 5, comment: "Switch超級好玩!", author: "Tim" },
       { rating: 5, comment: "後悔晚買了 :( ", author: "Henry" },
@@ -96,7 +96,7 @@ const productData = {
   }, 
   
   "Kindle Paperwhite (16GB)": {
-    description: "Kindle Paperwhite是Amazon推出的電子紙閱讀器，採用7吋300ppi的Paperwhite顯示器，具備IPX8防水等級，可以在浴室或泳池邊安心閱讀。 內建正面光源系統提供清晰的閱讀體驗，搭配16GB儲存空量能儲存大量電子書。",
+    description: "Amazon推出的電子紙閱讀器，採用7吋300ppi的Paperwhite顯示器，具備IPX8防水等級，可以在浴室或泳池邊安心閱讀。",
     reviews: [
       { rating: 5, comment: "電子書很方便攜帶!", author: "Henry" },
       { rating: 3, comment: "電子紙閱讀器畫質不夠高。", author: "Percy" }
@@ -105,7 +105,7 @@ const productData = {
   }, 
   
   "Bose QuietComfort Earbuds II": {
-    description: "Bose QuietComfort 消噪耳塞II 是全球首款採用Bose CustomTune 智能⽿內⾳場調校技術來抵消這種影響的耳機。 將耳塞放入耳朵時，麥克風會捕捉並評估響起的聲響，藉此判斷最適合每個耳朵的設定，以確保聲音到達耳膜時能夠達成完美平衡。",
+    description: "將耳塞放入耳朵時，麥克風會捕捉並評估響起的聲響，藉此判斷最適合每個耳朵的設定，以確保聲音到達耳膜時能夠達成完美平衡。",
     reviews: [
       { rating: 5, comment: "藍芽耳機超有質感!!", author: "Sky" },
     ],
@@ -113,7 +113,7 @@ const productData = {
   }, 
   
   "Marshall Acton III": {
-    description: "ActonIII以音樂為核心，以環保為宗旨。 在承襲品牌傳統的經典設計的同時，新一代產品採用不含PVC 的構造，塑料中包含了70% 再生塑料和純素材料，更加環保。 ActonIII的操控設計簡單直觀，可以直接進行配對並播放。 透過上方的高音、低音、音量等黃銅旋鈕和多項控制按鍵，無需使用你的電子設備即可輕鬆控制音樂。",
+    description: "透過上方的高音、低音、音量等黃銅旋鈕和多項控制按鍵，無需使用你的電子設備即可輕鬆控制音樂。",
     reviews: [
       { rating: 5, comment: "喇叭本人超級有質感!", author: "Monica" },
       { rating: 5, comment: "除了價格以外，其他都很完美!", author: "Kelly" },
@@ -123,7 +123,7 @@ const productData = {
   }, 
   
   "MacBook Air M4": {
-    description: "M4 晶片配備強大的10 核心CPU、最多10 核心GPU，且支援高達32 GB 的統一記憶體，讓全新的MacBook Air 比起M1 速度最快可達兩倍1。 相較於最快速的Intel 機型MacBook Air，M4 機型效能表現最快可達23 倍。",
+    description: "M4晶片配備強大的10核心CPU、最多10 核心GPU，且支援高達32GB的統一記憶體，速度最快可達兩倍。",
     reviews: [
       { rating: 5, comment: "筆電超有質感!", author: "Benny" },
       { rating: 4, comment: "會一直購買蘋果的電腦!", author: "Charles" },
@@ -150,7 +150,7 @@ const productData = {
   },
   
   "Dyson Airstraight": {
-    description: "利用氣流，從濕髮吹乾同時順直髮絲。沒有加熱面板 避免熱傷害。",
+    description: "利用氣流，從濕髮吹乾同時順直髮絲。沒有加熱面板以避免熱傷害。",
     reviews: [
       { rating: 5, comment: "吹完的頭髮很好看!", author: "Alice" },
       { rating: 4, comment: "效果不錯，但稍微貴一點。", author: "Bob" }
@@ -230,14 +230,6 @@ productDetail.addEventListener('click', e => {
 
 
 function showCard(level) {
-  /*
-    document.getElementById("popup-1").style.display = "none";
-    document.getElementById("popup-2").style.display = "none";
-
-    document.getElementById(`card-${level}`).style.display = "block";
-    document.getElementById("card-text").textContent = levels[level - 1].card;
-    document.getElementById("square-card").textContent = levels[level - 1].square;
-  */
 /*alert(level); */ document.getElementById(`popup-${level}`).style.display = "none";
     document.getElementById(`card-${level}`).style.display = "block";
     document.getElementById("card-text").textContent = levels[level - 1].card;
