@@ -548,8 +548,7 @@ h2 {
     margin-top:50px;
     font-family: sans-serif;
     font-size: clamp(24px, 5vw, 40px); /*clamp(最小, 字體大小為視窗寬度的5%, 最大)可用來確保字體不會太大或太小； */
-    margin: 0;
-	  letter-spacing: 0px;
+    letter-spacing: 0px;
     font-weight: bold;
 }
 
