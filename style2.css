@@ -434,6 +434,7 @@ ul#countdown {
     width: 100%;
     max-height: 500px;
     object-fit: contain;
+    aspect-ratio: 1 / 1;
 }
     
 .product-info h2 {
