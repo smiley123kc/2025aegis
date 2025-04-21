@@ -197,7 +197,8 @@ ul#countdown {
 * { 
   margin: 0; 
   padding: 0; 
-  box-sizing: border-box;       font-family: Arial, sans-serif; 
+  box-sizing: border-box;       
+  font-family: Arial, sans-serif; 
   font-size: clamp(8px, 5vw, 16px);
 }
     
@@ -275,7 +276,7 @@ ul#countdown {
 .products {
     display: grid;
     /*grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));*/
-    grid-template-columns:repeat(2, 1fr); /*明確兩欄*/
+    grid-template-columns:repeat(3, 1fr); /*明確3欄*/
     gap: 12px;
     padding: 20px;
 }
@@ -324,7 +325,8 @@ ul#countdown {
     font-size: 18px;
     font-weight: bold;
 }
-    
+   
+
 .cart-btn {
     background: #FFD814;
     white-space: nowrap;/*不換行*/
@@ -885,10 +887,48 @@ h2 {
 
 
 @media (max-width: 768px) {
-    .browser {
+   .browser {
         max-width: 100%;
     }
   
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .logo {
+    display: flex;
+    align-self: center;
+    order: 1;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+  }
+
+  .nav-links {
+    font-size:12px !important;
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    flex: 1 1 auto;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size:12px !important;
+  }
+  
+  .search-bar {
+    order: 3;
+    flex: 1 1 100%;
+    margin-top: 10px;
+  }
+
+ /*
   .header{
     display:flex;
     flex-direction:column;
@@ -905,7 +945,7 @@ h2 {
     width:90%;
     margin:10px 0;
   }
-  
+  */
   .cart-container{
     position:absolute;
     top:10px;
@@ -918,6 +958,10 @@ h2 {
     text-align:center;
     padding:10px;
     gap:2px;
+  }
+  
+  .products{
+    grid-template-columns: repeat(2, 1fr); /*明確兩欄*/
   }
   
   .card-text{
