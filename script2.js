@@ -179,11 +179,13 @@ cards.forEach(card => {
     // <img>、<h3>、<div class="price">、<div>(評價內容)</div>、<button>
     // 使用 querySelector('div:nth-child(4)') 取得第四個子元素的文字內容作為評價
     const rating = card.querySelector('div:nth-child(4)').textContent;
+    const rateNum = card.querySelector('ratenum').textContent;  
     
     // 將基本資訊填入 modal
     document.getElementById('detailTitle').textContent = title;
     document.getElementById('detailPrice').textContent = price;
     document.getElementById('detailRating').textContent = rating;
+    document.getElementById('detailRateNum').textContent = rateNum;  
     
     // 根據產品標題取得額外資料，若找不到則使用預設資料
     const data = productData[title] || {
