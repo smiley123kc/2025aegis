@@ -392,7 +392,7 @@ ul#countdown {
 .product-detail-content {
     background: white;
     /*max-width: 1200px;*/
-    max-width: 80%;
+    max-width: 70%;
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
@@ -928,24 +928,6 @@ h2 {
     margin-top: 10px;
   }
 
- /*
-  .header{
-    display:flex;
-    flex-direction:column;
-    text-align:center;
-    padding:10px 0;
-    
-  }
-  
-  .logo{
-    max-width:150px;
-  }
-  
-  .search-bar{
-    width:90%;
-    margin:10px 0;
-  }
-  */
   .cart-container{
     position:absolute;
     top:10px;
@@ -1035,4 +1017,3 @@ h2 {
   
 } /*關閉max-width: 768px*/
   
-
