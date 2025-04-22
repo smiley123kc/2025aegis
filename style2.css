@@ -150,6 +150,9 @@ ul#countdown {
     gap: 10px; /* 增加元素間距 */
 }
 
+.fas.fa-bars{
+  padding-right:2px;
+}
 
 .not-secure {
     color: red;
@@ -467,7 +470,7 @@ ul#countdown {
 }
     
 .reviews-section {
-    margin-top: 40px;
+    margin-top: 20px;
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
@@ -923,9 +926,9 @@ h2 {
   }
   
   .search-bar {
+    margin: 10px 10px 0px 10px;
     order: 3;
     flex: 1 1 100%;
-    margin-top: 10px;
   }
 
   .cart-container{
@@ -938,7 +941,7 @@ h2 {
     display:flex;
     flex-wrap:wrap; /*導航項目換行，避免擠在一起*/
     text-align:center;
-    padding:10px;
+    padding: 10px 0px 10px 20px;
     gap:2px;
   }
   
@@ -996,7 +999,7 @@ h2 {
   }
 
   .cart-btn{
-     font-size: clamp(11px, 1vw, 14px); /*clamp(最小, 字體大小為視窗寬度的5%, 最大)可用來確保字體不會太大或太小； */  
+     font-size: clamp(12px, 1vw, 14px); /*clamp(最小, 字體大小為視窗寬度的5%, 最大)可用來確保字體不會太大或太小； */  
       width:100%;
   }
 	 
