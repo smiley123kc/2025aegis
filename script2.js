@@ -5,9 +5,13 @@ let timerRunning=true; //倒數計時器是否繼續
 let clickedCart = false;
 let clickedBuy = false;
 
+const types = ["heart", "diamond", "spade", "club"];
+const chosenSymbol = types[Math.floor(Math.random() * types.length)];
+
+
 const levels = [
-    { url: "http://amaz0n.com", message: "🚩 這是釣魚網站，網址拼寫錯誤！🚩", card: "", square: "❤️" },
-    { url: "http://paypa1.com", message: "🚩 這是假冒的客服，想要詐騙你的個人資料！🚩", card: "", square: "✌️" }
+    { url: "https://amaz0n.com", message: "🚩 這是釣魚網站，網址拼寫錯誤！🚩", card: "", square: "🤍" },
+    { url: "http://paypa1.com", message: "🚩 這是假客服，想要詐騙你的個人資料！🚩", card: "", square: "🔴" }
 ];
 
 function stopTimer(){
@@ -21,7 +25,7 @@ function updateTimer() {
         document.getElementById("minute").textContent = String(Math.floor(timeLeft / 60)).padStart(2, "0");
         document.getElementById("second").textContent = String(timeLeft % 60).padStart(2, "0");
 
-        let progress = (timeLeft / 600) * 100;
+let progress = (timeLeft / 600) * 100;
         document.getElementById("progressBar").firstElementChild.style.width = progress + "%";
 
         setTimeout(updateTimer, 1000);
@@ -226,16 +230,136 @@ productDetail.addEventListener('click', e => {
   }
 });
 
+function playHeartAnimation() {
+  const left = document.querySelector(".half-heart.left");
+  const right = document.querySelector(".half-heart.right");
+  const full = document.querySelector(".full-heart");
 
+  // 重設動畫狀態
+  left.style.display = "block";
+  right.style.display = "block";
+  full.classList.remove("show");
 
+  // 重播半心動畫
+  left.style.animation = "none";
+  right.style.animation = "none";
+  void left.offsetWidth;
+  void right.offsetWidth;
+  left.style.animation = "slide-in-left 1s forwards";
+  right.style.animation = "slide-in-right 1s forwards";
+  
+  
+  // 1 秒後合體動畫
+  setTimeout(() => {
+    
+    left.style.display = "none";
+    right.style.display = "none";
+    console.log('before add show:', full);
+    full.classList.add("show");
+    console.log('class list:', full.classList);
+  }, 1000);
+}
+
+const symbolSVG = {
+  heart: {
+    left: `<path d="M25 47 L9 31 C3 25 3 14 11 10 C17 7 22 10 25 15 Z" fill="#FF6B81" stroke="black" stroke-width="4" />`,
+    right: `<path d="M25 47 L41 31 C47 25 47 14 39 10 C33 7 28 10 25 15 Z" fill="#FF6B81" stroke="black" stroke-width="4" />`,
+    full: `<path d="M25 47 L9 31 C3 25 3 14 11 10 C17 7 22 10 25 15 C28 10 33 7 39 10 C47 14 47 25 41 31 Z" fill="#FF6B81" stroke="black" stroke-width="4" />`
+  },
+  diamond: {
+    left: `<path d="M25 5 L10 25 L25 45 L25 5 Z" fill="#FF9F1C" stroke="black" stroke-width="4" />`,
+    right: `<path d="M25 5 L40 25 L25 45 Z" fill="#FF9F1C" stroke="black" stroke-width="4" />`,
+    full: `<path d="M25 5 L10 25 L25 45 L40 25 Z" fill="#FF9F1C" stroke="black" stroke-width="4" />`
+  },
+  spade: {
+    left: `<path d="M25 4.57 C24.2 5.08 4.71 16.96 4.71 27.48 A10.99 10.99 0 0 0 20.79 37.23 L18.45 44.26 A1.57 1.57 0 0 0 19.93 46.33 H25 Z" fill="#5C7AFF" stroke="black" stroke-width="4"/>`,
+    right: `<path d="M25 4.57 C25.8 5.08 45.53 16.96 45.53 27.48 A10.99 10.99 0 0 1 29.46 37.23 L31.8 44.26 A1.57 1.57 0 0 1 30.31 46.33 H25 Z" fill="#5C7AFF" stroke="black" stroke-width="4"/>`,
+    full: `<path d="M45.53 27.475a10.99 10.99 0 0 1 -16.074 9.745l2.342 7.031a1.57 1.57 0 0 1 -1.49 2.067H19.93a1.57 1.57 0 0 1 -1.49 -2.067l2.342 -7.031A10.99 10.99 0 0 1 4.71 27.475c0 -10.514 19.17 -22.903 19.986 -23.425a0.785 0.785 0 0 1 0.846 0C26.36 4.572 45.53 16.961 45.53 27.475" fill="#5C7AFF" stroke="black" stroke-width="4"/>`
+  },
+  club: {
+    left: `<path d="M25 6.5 C21.5 4.5 16 6.8 14.5 12 C13.9 14.4 14.1 16.5 15.2 18.6 A10.05 10.05 0 0 0 5.5 28.7 A10.05 10.05 0 0 0 17.3 36.1 L15.2 42.7 A1.55 1.55 0 0 0 17.2 45.7 H25 Z" fill="#28C76F" stroke="black" stroke-width="4"/>`,
+    right: `<path d="M25 6.5 C28.5 4.5 34 6.8 35.5 12 C36.1 14.4 35.9 16.5 34.8 18.6 A10.05 10.05 0 0 1 44.5 28.7 A10.05 10.05 0 0 1 32.7 36.1 L34.8 42.7 A1.55 1.55 0 0 1 32.8 45.7 H25 Z" fill="#28C76F" stroke="black" stroke-width="4"/>`,
+    full: `<path d="M44.95 28.675a10.076 10.076 0 0 1 -15.589 8.433l2.064 6.605A1.55 1.55 0 0 1 29.946 45.725h-10.292a1.55 1.55 0 0 1 -1.479 -2.012l2.063 -6.601a10.017 10.017 0 0 1 -5.805 1.635c-5.372 -0.152 -9.761 -4.651 -9.783 -10.028A10.075 10.075 0 0 1 14.725 18.6q0.393 0 0.784 0.03a10.076 10.076 0 1 1 18.58 0 10.269 10.269 0 0 1 1.059 -0.027A10.017 10.017 0 0 1 44.95 28.675" fill="#28C76F" stroke="black" stroke-width="4" />`
+  }
+};
+
+function playSymbolAnimation(type) {
+  
+  document.querySelectorAll(".symbol-container").forEach(c => c.classList.remove("show"));
+  const container = document.querySelector(`.symbol-container[data-type="${type}"]`);
+  container.classList.add("show");
+
+  const left = container.querySelector(".half-symbol.left");
+  const right = container.querySelector(".half-symbol.right");
+  const full = container.querySelector(".full-symbol");
+
+  const { left: lPath, right: rPath, full: fPath } = symbolSVG[type];
+  left.innerHTML = lPath;
+  right.innerHTML = rPath;
+  full.innerHTML = fPath;
+
+  left.style.display = "block";
+  right.style.display = "block";
+  full.classList.remove("show");
+
+  left.style.animation = "none";
+  right.style.animation = "none";
+  void left.offsetWidth;
+  void right.offsetWidth;
+
+  setTimeout(() => {
+    left.style.animation = "slide-in-left 1s forwards";
+    right.style.animation = "slide-in-right 1s forwards";
+  }, 100);
+
+  setTimeout(() => {
+    full.classList.add("show");
+    left.style.display = "none";
+    right.style.display = "none";
+  }, 1010);
+}
 
 function showCard(level) {
-/*alert(level); */ document.getElementById(`popup-${level}`).style.display = "none";
-    document.getElementById(`card-${level}`).style.display = "block";
-    document.getElementById("card-text").textContent = levels[level - 1].card;
-    document.getElementById("square-card").textContent = levels[level - 1].square;
-  document.querySelector("#card-2 #square-card").innerText = levels[currentLevel].square;
-}
+  
+  if(level===3){
+    document.getElementById(`card-${level-1}`).style.display = "none";
+    document.getElementById(`card-${level}`).style.display = "block";
+  } // if
+  else {
+    document.getElementById(`popup-${level}`).style.display = "none";
+    document.getElementById(`card-${level}`).style.display = "block";
+  } // else
+ 
+  const card = document.getElementById(`card-${level}`);
+  const square = card.querySelector(".square-card");
+  
+  // 取得選中的圖案 SVG
+  const { left, right, full } = symbolSVG[chosenSymbol];
+  
+
+  // 設定字卡文字與圖案
+ if (level === 1) {
+   
+   square.innerHTML = `<svg width="60" height="60" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">${left}</svg>`;
+
+  }//if
+  else if(level===2) {
+    square.innerHTML = `<svg width="60" height="60" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">${right}</svg>`;
+
+  } // else if 
+  else if(level===3) {
+    square.innerHTML = `
+      <div class="symbol-container show" data-type="${chosenSymbol}">
+        <svg class="half-symbol left" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">${left}</svg>
+        <svg class="half-symbol right" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">${right}</svg>
+        <svg class="full-symbol" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">${full}</svg>
+      </div>
+    `;
+       
+       setTimeout(() => playSymbolAnimation(chosenSymbol), 10);     
+  } // else if 
+  
+} // showCard()
 
 
 function showCompletionScreen() { 
@@ -277,9 +401,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function nextLevel() {
  // alert("進入 nextLevel 函式，currentLevel=" + currentLevel);
- /* console.log("currentLevel:", currentLevel); // 確認變數值
-    console.log("level-2:", document.getElementById("level-2")); // 確認元素是否存在  
- */ 
     document.getElementById(`card-${currentLevel + 1}`).style.display = "none";
 
     currentLevel++;
@@ -288,15 +409,11 @@ function nextLevel() {
         document.getElementById("level-1").style.display = "none";
       
         document.getElementById("level-2").style.display = "block";
- /*     
-document.getElementById("level-2").style.visibility = "visible";
-document.getElementById("level-2").style.opacity = "1";
-*/
     } else {
       document.getElementById("level-2").style.display = "none";
       
 showCompletionScreen();
-        /*document.body.innerHTML = "<h1 style='text-align:center;color:green;'>🎉 恭喜你完成所有關卡！</h1>";*/
+        
     }
 }
 
@@ -318,8 +435,12 @@ document.querySelector(".cart-now-btn").addEventListener("click", function () {
       }  // if
     }); // function
 
+
+
+
 function checkGameOver() {
       if (clickedCart || clickedBuy) {
         document.getElementById("gameOverScreen").style.display = "flex";
       } // if
 } // checkGameOver
+
