@@ -35,7 +35,7 @@
 
             <div class="address-bar" onclick="checkAnswer()">
                 <span class="not-secure">⚠️ 不安全</span>
-                <span class="fake-url" id="fake-url">http://amaz0n.com</span>
+                <span class="fake-url" id="fake-url">https://amaz0n.com</span>
             </div>   <!-- 關閉 address-bar -->
 
             <div class="fake-website" id="fake-content">
@@ -216,7 +216,7 @@
     <!-- 翻頁提示字卡 -->
     <div class="card" id="card-1">
         <p id="card-text"></p>
-        <div class="square-card" id="square-card"></div>
+        <div class="square-card"></div><!--square-card-->
         <button onclick="nextLevel()">下一關</button> 
     </div>
 </main>  
@@ -334,10 +334,17 @@
 
    <!-- 第二關翻頁提示字卡 -->
     <div class="card" id="card-2" style="display: none;">
-      <div class="square-card" id="square-card"></div>
+      <div class="square-card"></div>
+       
+        <button onclick="showCard(3)">確認提示 </button> 
+    </div> <!--關閉card-2-->
+  
+  <!-- 第二關合併提示字卡 -->
+    <div class="card" id="card-3" style="display: none;">
+      <div class="square-card"></div>
        
         <button onclick="nextLevel()">結束遊戲</button> 
-    </div> <!--關閉card-2-->
+    </div> <!--關閉card-3-->
 
 </div>  <!-- 關閉 #level-2 -->
 
